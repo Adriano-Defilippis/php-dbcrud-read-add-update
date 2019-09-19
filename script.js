@@ -3,26 +3,56 @@ function getGrandParentId(this_click){
     var parent = this_click.parent();
     var nonno = parent.parent();
     var id_ref = nonno.data('id');
-
-    console.log(id_ref);
     
     return id_ref;
     
 }
 
-function getParentAttr(this_click){
+function getBisNonnoAttr(this_click){
 
     var parent = this_click.parent();
     var gran_parent = parent.parent();
-    var category = gran_parent.data('cat');
+    var new_parent = gran_parent.parent();
+    var category = new_parent.data('cat');
 
-
+    
     return category;
     
 }
 
 function setItemCrud(){
 
+    var id_ref = getGrandParentId($(this));
+    var cat_ref = getBisNonnoAttr($(this));
+
+    var new_name = prompt('inserisci il nuovo nome della bevanda') ;
+    var new_brand = prompt('Inserisci la marca') ;
+    var new_price = prompt('Inserisci il prezzo') ;
+    var new_date = prompt('Immettere la data di scadenza') ;
+
+    $.ajax({
+
+        url: 'api_set.php',
+        method: "GET",
+        data: {
+            id: id_ref,
+            category_prod: cat_ref,
+            nome: new_name,
+            marca: new_brand,
+            prezzo: new_price,
+            data_scadenza: new_date,
+        },
+        
+        success: function(data){
+            
+            getData();
+               
+        },
+        error: function(err){
+            console.log("errore SET CRUD api_Set");
+            
+        }
+    });
 }
 
 function deleteItemCrud(){
@@ -47,11 +77,6 @@ function deleteItemCrud(){
             
         }
     });
-}
-
-function setItemCrud(){
-
-
 }
 
 function addItemCrud(){
