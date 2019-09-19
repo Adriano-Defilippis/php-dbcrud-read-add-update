@@ -1,21 +1,58 @@
-function printCategoryTemplate(data){
+function getGrandParentAttr(this_click){
+
+    var parent = this_click.parent();
+    var gran_parent = parent.parent();
+    var new_parent = gran_parent.parent();
+
+    var category = new_parent.data('cat');
+
+
+    return category;
     
-    var source = $('#category_template').html();
-    var template = Handlebars.compile(source);
+}
 
-    const element = data[i];
-    const category = element['category_prod'];
+function getParentAttr(this_click){
 
-    $('.' +  category + '').remove();
+    var parent = this_click.parent();
+    var gran_parent = parent.parent();
+    var category = gran_parent.data('cat');
+
+
+    return category;
     
-    var context = {
-        categoria: category
-    };
+}
 
-    var html = template(context);
-
-    $('.' +  category + '').append(html);
+function deleteItemCrud(){
     
+    var category = getParentAttr($(this));
+
+    var new_name = prompt('inserisci il nome della bevanda') ;
+    var new_brand = prompt('Inserisci la marca') ;
+    var new_price = prompt('Inserisci il prezzo') ;
+    var new_date = prompt('Immettere la data di scadenza') ;
+
+    $.ajax({
+
+        url: 'api_add_prod.php',
+        method: 'GET',
+        data: {
+            nome: new_name,
+            marca: new_brand,
+            prezzo: new_price,
+            data_scadenza: new_date,
+            category_prod: category
+        },
+
+        success: function(data){
+            getData()
+        },
+        error: function(err){
+            console.log("Errore chiamata INSERT IN TO");
+            
+        }
+    });
+    
+   
 }
 
 function printData(data){
@@ -29,9 +66,6 @@ function printData(data){
         var context = element;
 
         var html = template(context);
-
-        console.log("categoryattr",$("[data-cat*='" + element['category_prod'] + "']") );
-        
         
         $("[data-cat*='" + element['category_prod'] + "']").append(html);
     }
@@ -48,7 +82,7 @@ function getData(){
         
         success: function(data){
             console.log(data);
-
+            $('.specifiche_prod').remove();
             printData(data)
                
         },
@@ -62,11 +96,7 @@ function getData(){
 function init() {
     getData();
 
-    $(document).on('click', '.cat_prod[data-cat]', function(){
-
-        console.log($(this).data("cat"));
-        
-    });
+    $(document).on('click', '.cat_prod .fa-database', deleteItemCrud);
     
     
 }

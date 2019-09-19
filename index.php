@@ -22,10 +22,8 @@
             <li>Nome: {{nome}}</li>
             <li>Marca: {{marca}}</li>
             <li>Prezzo: {{prezzo}}</li>
-            <li>Data Scadenza{{data_scadenza}}</li>
+            <li>Data Scadenza: {{data_scadenza}}</li>
             <li class="action_btn">
-              <span>+ </span>
-              <i class="fas fa-database"></i>
               <i class="fas fa-cog"></i>
               <i class="fas fa-window-close"></i>
             </li>
@@ -54,14 +52,34 @@
       <header><h1>Cocktails del PuBool</h1></header>
       <div class="cat_prod" data-cat="vini">
         <h1 class="title_cat">VINI</h1>
+        <div class="action_btn">
+          <span class="cl_wht">+ </span>
+          <i class="fas fa-database cl_wht"></i>
+        </div>
       </div>
 
       <div class="cat_prod" data-cat="succhi">
         <h1 class="title_cat">SUCCHI ED ESTRATTI</h1>
+        <div class="action_btn">
+          <span class="cl_wht">+ </span>
+          <i class="fas fa-database cl_wht"></i>
+        </div>
       </div>
 
       <div class="cat_prod" data-cat="birre">
         <h1 class="title_cat">BIRRE</h1>
+        <div class="action_btn">
+          <span class="cl_wht">+ </span>
+          <i class="fas fa-database cl_wht"></i>
+        </div>
+      </div>
+
+      <div class="cat_prod" data-cat="bevanda">
+        <h1 class="title_cat">BEVANDE GENERICHE</h1>
+        <div class="action_btn">
+          <span class="cl_wht">+ </span>
+          <i class="fas fa-database cl_wht"></i>
+        </div>
       </div>
 
 
