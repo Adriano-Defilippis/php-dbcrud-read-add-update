@@ -1,12 +1,13 @@
-function getGrandParentAttr(this_click){
+function getGrandParentId(this_click){
 
     var parent = this_click.parent();
     var gran_parent = parent.parent();
     var new_parent = gran_parent.parent();
 
-    var category = new_parent.data('cat');
+    var category = new_parent.attr('id');
 
-
+    console.log(category);
+    
     return category;
     
 }
@@ -22,7 +23,37 @@ function getParentAttr(this_click){
     
 }
 
+function setItemCrud(){
+
+}
+
 function deleteItemCrud(){
+   
+    var parent = $(this).parent();
+    var nonno = parent.parent();
+    var id_ref = nonno.data('id');
+
+    $.ajax({
+
+        url: 'api_delete.php',
+        method: "GET",
+        data: {
+            id: id_ref
+        },
+        
+        success: function(data){
+            
+            getData();
+               
+        },
+        error: function(err){
+            console.log("errore chimata api");
+            
+        }
+    });
+}
+
+function addItemCrud(){
     
     var category = getParentAttr($(this));
 
@@ -96,7 +127,9 @@ function getData(){
 function init() {
     getData();
 
-    $(document).on('click', '.cat_prod .fa-database', deleteItemCrud);
+    $(document).on('click', '.cat_prod .fa-database', addItemCrud);
+    $(document).on('click', '.action_btn .fa-cog', setItemCrud);
+    $(document).on('click', '.action_btn .fa-window-close', deleteItemCrud);
     
     
 }
