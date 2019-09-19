@@ -8,6 +8,15 @@ function getGrandParentId(this_click){
     
 }
 
+function getGrandParentAttr(this_click){
+
+    var parent = this_click.parent();
+    var nonno = parent.parent();
+    var id_ref = nonno.data('cat');
+    
+    return id_ref;
+}
+
 function getBisNonnoAttr(this_click){
 
     var parent = this_click.parent();
@@ -81,7 +90,7 @@ function deleteItemCrud(){
 
 function addItemCrud(){
     
-    var category = getParentAttr($(this));
+    var category = getGrandParentAttr($(this));
 
     var new_name = prompt('inserisci il nome della bevanda') ;
     var new_brand = prompt('Inserisci la marca') ;
