@@ -1,14 +1,12 @@
 function getGrandParentId(this_click){
 
     var parent = this_click.parent();
-    var gran_parent = parent.parent();
-    var new_parent = gran_parent.parent();
+    var nonno = parent.parent();
+    var id_ref = nonno.data('id');
 
-    var category = new_parent.attr('id');
-
-    console.log(category);
+    console.log(id_ref);
     
-    return category;
+    return id_ref;
     
 }
 
@@ -29,9 +27,7 @@ function setItemCrud(){
 
 function deleteItemCrud(){
    
-    var parent = $(this).parent();
-    var nonno = parent.parent();
-    var id_ref = nonno.data('id');
+    var id_ref = getGrandParentId($(this));
 
     $.ajax({
 
@@ -51,6 +47,11 @@ function deleteItemCrud(){
             
         }
     });
+}
+
+function setItemCrud(){
+
+
 }
 
 function addItemCrud(){
