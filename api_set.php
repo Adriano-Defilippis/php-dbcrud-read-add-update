@@ -17,19 +17,12 @@
     }
 
     $id = $_GET['id'];
-    $name = $_GET['nome'];
-    $brand = $_GET['marca'];
     $price = $_GET['prezzo'];
-    $date = $_GET['data_scadenza'];
-    $category = $_GET['category_prod'];
+    
 
     $query = "
                 UPDATE menu_prodotti
-                SET prezzo = " . $price . ",
-                    nome = '" . $name . "',
-                    marca = '" . $brand . "',
-                    category_prod = '" . $category . "',
-                    data_scadenza = '" . $date . "'
+                SET prezzo = " . $price . "
                 WHERE id = " . $id . "
     ";
 

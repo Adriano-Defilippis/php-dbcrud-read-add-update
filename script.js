@@ -32,12 +32,9 @@ function getBisNonnoAttr(this_click){
 function setItemCrud(){
 
     var id_ref = getGrandParentId($(this));
-    var cat_ref = getBisNonnoAttr($(this));
 
-    var new_name = prompt('inserisci il nuovo nome della bevanda') ;
-    var new_brand = prompt('Inserisci la marca') ;
-    var new_price = prompt('Inserisci il prezzo') ;
-    var new_date = prompt('Immettere la data di scadenza') ;
+    
+    var new_price = prompt('Inserisci il nuovo prezzo') ;
 
     $.ajax({
 
@@ -45,11 +42,7 @@ function setItemCrud(){
         method: "GET",
         data: {
             id: id_ref,
-            category_prod: cat_ref,
-            nome: new_name,
-            marca: new_brand,
-            prezzo: new_price,
-            data_scadenza: new_date,
+            prezzo: new_price
         },
         
         success: function(data){
