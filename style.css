@@ -105,6 +105,10 @@ ul.specifiche_prod li{
   
 }
 
+.action_btn i{
+  cursor: pointer;
+}
+
 .fas{
   margin-left: 4px;
 }
@@ -112,6 +116,7 @@ ul.specifiche_prod li{
 .action_btn.position{
   top: 25px;
   transform: translate(0, -50%);
+  
 }
 
 .cl_wht{
