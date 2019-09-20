@@ -19,10 +19,10 @@
     <script id="item-template" type="text/x-handlebars-template">
       
       <ul class="specifiche_prod" data-id="{{id}}">
-            <li>Nome: {{nome}}</li>
-            <li>Marca: {{marca}}</li>
-            <li>Prezzo: {{prezzo}}</li>
-            <li>Data Scadenza: {{data_scadenza}}</li>
+            <li><strong>Nome:</strong> {{nome}}</li>
+            <li><strong>Marca:</strong> {{marca}}</li>
+            <li><strong>Prezzo:</strong> {{prezzo}}</li>
+            <li><strong>Data Scadenza:</strong> {{data_scadenza}}</li>
             <li class="action_btn">
               <i class="fas fa-cog"></i>
               <i class="fas fa-window-close"></i>
@@ -49,10 +49,10 @@
     
     <div class="container">
 
-      <header><h1>Cocktails del PuBool</h1></header>
+      <header><h1>Bevande del PuBool</h1></header>
       <div class="cat_prod" data-cat="vini">
         <h1 class="title_cat">VINI</h1>
-        <div class="action_btn">
+        <div class="action_btn position">
           <span class="cl_wht">+ </span>
           <i class="fas fa-database cl_wht"></i>
         </div>
