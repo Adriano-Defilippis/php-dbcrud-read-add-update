@@ -54,7 +54,7 @@
         <h1 class="title_cat">VINI</h1>
         <div class="action_btn position position">
           <span class="cl_wht">+ </span>
-          <i class="fas fa-database cl_wht"></i>
+          <i class="fas fa-database fa-lg cl_wht"></i>
         </div>
       </div>
 
@@ -62,7 +62,7 @@
         <h1 class="title_cat">SUCCHI ED ESTRATTI</h1>
         <div class="action_btn position">
           <span class="cl_wht">+ </span>
-          <i class="fas fa-database cl_wht"></i>
+          <i class="fas fa-database fa-lg cl_wht"></i>
         </div>
       </div>
 
@@ -70,7 +70,7 @@
         <h1 class="title_cat">BIRRE</h1>
         <div class="action_btn position">
           <span class="cl_wht">+ </span>
-          <i class="fas fa-database cl_wht"></i>
+          <i class="fas fa-database fa-lg cl_wht"></i>
         </div>
       </div>
 
@@ -78,7 +78,7 @@
         <h1 class="title_cat">BEVANDE GENERICHE</h1>
         <div class="action_btn position">
           <span class="cl_wht">+ </span>
-          <i class="fas fa-database cl_wht"></i>
+          <i class="fas fa-database fa-lg cl_wht"></i>
         </div>
       </div>
 
