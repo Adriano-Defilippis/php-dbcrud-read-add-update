@@ -52,7 +52,7 @@
       <header><h1>Bevande del PuBool</h1></header>
       <div class="cat_prod" data-cat="vini">
         <h1 class="title_cat">VINI</h1>
-        <div class="action_btn position">
+        <div class="action_btn position position">
           <span class="cl_wht">+ </span>
           <i class="fas fa-database cl_wht"></i>
         </div>
@@ -60,7 +60,7 @@
 
       <div class="cat_prod" data-cat="succhi">
         <h1 class="title_cat">SUCCHI ED ESTRATTI</h1>
-        <div class="action_btn">
+        <div class="action_btn position">
           <span class="cl_wht">+ </span>
           <i class="fas fa-database cl_wht"></i>
         </div>
@@ -68,7 +68,7 @@
 
       <div class="cat_prod" data-cat="birre">
         <h1 class="title_cat">BIRRE</h1>
-        <div class="action_btn">
+        <div class="action_btn position">
           <span class="cl_wht">+ </span>
           <i class="fas fa-database cl_wht"></i>
         </div>
@@ -76,7 +76,7 @@
 
       <div class="cat_prod" data-cat="bevanda">
         <h1 class="title_cat">BEVANDE GENERICHE</h1>
-        <div class="action_btn">
+        <div class="action_btn position">
           <span class="cl_wht">+ </span>
           <i class="fas fa-database cl_wht"></i>
         </div>
